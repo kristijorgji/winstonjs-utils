@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/kristijorgji/winstonjs-utils",
   "publishConfig": {
+    "access": "public",
     "@kristijorgji:registry": "https://npm.pkg.github.com/kristijorgji"
   },
   "author": "Kristi Jorgji",
@@ -11,7 +12,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "./dist"
   ],
   "scripts": {
     "dev": "nodemon --config nodemon.json",
@@ -25,7 +26,8 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "fix:eslint": "eslint --fix  --no-error-on-unmatched-pattern --ext js,jsx,ts,tsx {src,__tests__}/**",
     "fix:prettier": "prettier --write '{src,__tests__}/**/*.ts'",
-    "fix": "yarn fix:eslint && yarn fix:prettier"
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "prepublish": "yarn test && yarn build"
   },
   "dependencies": {
     "nodemailer": "^6.7.3"
