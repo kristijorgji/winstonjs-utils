@@ -1,0 +1,48 @@
+{
+  "name": "kristijorgji",
+  "private": true,
+  "version": "1.0.0",
+  "repository": "https://github.com/kristijorgji/winstonjs-utils",
+  "description": "A collection of winstonjs transports",
+  "main": "index.js",
+  "author": "Kristi Jorgji",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "lint:eslint": "lerna run lint:eslint",
+    "lint:prettier": "lerna run lint:prettier",
+    "lint": "lerna run lint",
+    "fix:eslint": "lerna run fix:eslint",
+    "fix:prettier": "lerna run fix:prettier",
+    "fix": "lerna run fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lerna": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.1",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "tsc": "^2.0.4",
+    "tsc-alias": "^1.6.4",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.3",
+    "winston": "^3.6.0"
+  }
+}

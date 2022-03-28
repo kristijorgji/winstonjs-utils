@@ -1,0 +1,48 @@
+name: Publish
+on:
+  pull_request:
+    types: [ closed ]
+    branches:
+      - development
+      - main
+
+jobs:
+  publish:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+          fetch-depth: 0
+
+      - name: Use NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.4.0'
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+          npx lerna bootstrap
+
+      - name: Run tests
+        run: npx lerna exec npm run test
+
+      - name: Version and publish
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor}}@users.noreply.github.com"
+          
+          if [ ${{ github.base_ref }} = development ]; then
+            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+          else
+            #npx lerna version --conventional-commits --conventional-graduate --yes
+            npx lerna version --conventional-commits --yes
+          fi
+
+          npx lerna publish from-git --yes

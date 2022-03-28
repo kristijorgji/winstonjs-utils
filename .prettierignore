@@ -1,0 +1,9 @@
+.eslintignore
+.git
+.gitignore
+.gitignore
+.prettierignore
+assets/**
+js/**
+node_modules/**
+*.json

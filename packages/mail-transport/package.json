@@ -1,0 +1,33 @@
+{
+  "name": "@kristijorgji/winstonjs-mail-transport",
+  "version": "1.0.0",
+  "repository": "https://github.com/kristijorgji/winstonjs-utils",
+  "publishConfig": {
+    "@kristijorgji:registry": "https://npm.pkg.github.com/kristijorgji"
+  },
+  "author": "Kristi Jorgji",
+  "license": "MIT",
+  "description": "Mail transport for WinstonJS logger",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "dev": "nodemon --config nodemon.json",
+    "debug": "nodemon --config nodemon.debug.json",
+    "debug:static": "node --inspect-brk=0.0.0.0:9300 --require ts-node/register --require tsconfig-paths/register src/index.ts",
+    "test": "jest",
+    "build": "bash tasks/build.sh",
+    "start": "node dist/src/index.js",
+    "lint:eslint": "eslint \"{src,__tests__}/**/*.ts\"",
+    "lint:prettier": "prettier --check '{src,__tests__}/**/*.ts'",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "fix:eslint": "eslint --fix  --no-error-on-unmatched-pattern --ext js,jsx,ts,tsx {src,__tests__}/**",
+    "fix:prettier": "prettier --write '{src,__tests__}/**/*.ts'",
+    "fix": "yarn fix:eslint && yarn fix:prettier"
+  },
+  "dependencies": {
+    "nodemailer": "^6.7.3"
+  }
+}
