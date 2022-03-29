@@ -13,12 +13,24 @@ It will use relative paths in order to be able to reproduce results in any machi
 script_directory="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${script_directory}/common.sh"
 
+function linkCommonItemToAllProjects() {
+  commonItem=$1
+
+  for d in packages/*/ ; do
+      commonItemRelToPackagePath="../../$commonItem"
+      ln -s "$commonItemRelToPackagePath" "$d/"
+      echo -e "soft linked $commonItemRelToPackagePath to $d\n"
+  done
+}
+
 commonFilesRelPath="_common"
-echo $commonFilesRelPath
+
+# normal files
 for commonItem in $commonFilesRelPath/* ; do
-    for d in packages/*/ ; do
-        commonItemRelToPackagePath="../../$commonItem"
-        ln -sf "$commonItemRelToPackagePath" "$d/"
-        echo -e "soft linked $commonItemRelToPackagePath to $d\n"
-    done
+    linkCommonItemToAllProjects "$commonItem";
+done
+
+# hidden dot files ex .npmignore
+for commonItem in $commonFilesRelPath/.[^.]* ; do
+    linkCommonItemToAllProjects "$commonItem";
 done
