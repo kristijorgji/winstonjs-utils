@@ -1,5 +1,1 @@
-{
-  "watch": ["src"],
-  "exec": "node --inspect-brk=0.0.0.0:9300 --require ts-node/register --require tsconfig-paths/register src/index.ts",
-  "ext": "js,ts"
-}
+/Users/kristi.jorgji/Desktop/libs/winstonjs-utils/_common/nodemon.debug.json
