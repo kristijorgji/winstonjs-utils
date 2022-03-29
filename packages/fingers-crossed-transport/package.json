@@ -1,6 +1,6 @@
 {
   "name": "@kristijorgji/winstonjs-fingers-crossed-transport",
-  "version": "1.1.0-beta.5",
+  "version": "1.1.0-beta.6",
   "repository": "https://github.com/kristijorgji/winstonjs-utils",
   "publishConfig": {
     "access": "public",
