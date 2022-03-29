@@ -5,7 +5,6 @@ on:
     branches:
       - development
       - main
-
 jobs:
   publish:
     if: github.event.pull_request.merged == true
@@ -30,10 +29,9 @@ jobs:
           yarn install --frozen-lockfile
           npx lerna bootstrap
 
-      - name: Run tests
-        run: npx lerna exec npm run test
-
       - name: Version and publish
+        env:
+          HUSKY: 0 # disable husky and commit lint when lerna commits changelog
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
