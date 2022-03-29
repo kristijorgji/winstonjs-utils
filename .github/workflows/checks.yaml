@@ -20,10 +20,9 @@ jobs:
         with:
           node-version: 16.4.0
 
-      - name: Setup npm
+      - name: Setup npm configs
         run: |
-          npm set @kristijorgji:registry=https://npm.pkg.github.com/kristijorgji
-          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}"
+          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
 
       - name: Install dependencies
         run: |
