@@ -1,1 +1,1 @@
-/Users/kristi.jorgji/Desktop/libs/winstonjs-utils/_common/jest.config.js
+../../_common/jest.config.js
