@@ -14,10 +14,6 @@
   "files": [
     "./dist"
   ],
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
-  },
   "scripts": {
     "dev": "nodemon --config nodemon.json",
     "debug": "nodemon --config nodemon.debug.json",
