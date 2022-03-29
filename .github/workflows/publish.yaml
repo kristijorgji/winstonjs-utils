@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
       - name: Checkout
@@ -29,6 +30,10 @@ jobs:
           yarn install --frozen-lockfile
           npx lerna bootstrap
 
+      - name: Setup npm configs
+        run: |
+          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+
       - name: Version and publish
         env:
           HUSKY: 0 # disable husky and commit lint when lerna commits changelog
@@ -39,8 +44,7 @@ jobs:
           if [ ${{ github.base_ref }} = development ]; then
             npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
           else
-            #npx lerna version --conventional-commits --conventional-graduate --yes
-            npx lerna version --conventional-commits --yes
+            npx lerna version --conventional-commits --conventional-graduate --yes
           fi
 
           npx lerna publish from-git --yes
