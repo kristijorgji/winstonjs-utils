@@ -36,7 +36,7 @@ export interface LogMessageInfo extends TransformableInfo {
  *   are logged in one go
  *
  */
-export class FingersCrossedTransport extends Transport {
+export default class FingersCrossedTransport extends Transport {
     private decoratedTransport: Transport;
     private storedMessages: LogMessageInfo[] = [];
     private readonly standardLevelRank: number;

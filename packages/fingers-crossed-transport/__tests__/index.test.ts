@@ -2,7 +2,7 @@ import { Logger, createLogger } from 'winston';
 import TransportStream from 'winston-transport';
 import { ConsoleTransportInstance } from 'winston/lib/winston/transports';
 
-import { FingersCrossedTransport, LEVEL, LogMessageInfo } from '../src';
+import FingersCrossedTransport, { LEVEL, LogMessageInfo } from '../src';
 
 function makeLog(level: string, message: string): LogMessageInfo {
     const log = { level } as LogMessageInfo;

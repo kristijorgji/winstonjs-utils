@@ -1,5 +1,1 @@
-{
-  "watch": ["src"],
-  "exec": "ts-node --project tsconfig.json -r tsconfig-paths/register src/index.ts",
-  "ext": "js,ts"
-}
+../../_common/nodemon.json

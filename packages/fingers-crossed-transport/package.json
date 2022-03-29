@@ -1,8 +1,9 @@
 {
   "name": "@kristijorgji/winstonjs-fingers-crossed-transport",
-  "version": "1.0.0",
+  "version": "1.1.0-beta.6",
   "repository": "https://github.com/kristijorgji/winstonjs-utils",
   "publishConfig": {
+    "access": "public",
     "@kristijorgji:registry": "https://npm.pkg.github.com/kristijorgji"
   },
   "author": "Kristi Jorgji",
@@ -10,9 +11,6 @@
   "description": "Fingers crossed transport for WinstonJS logger",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "/dist"
-  ],
   "scripts": {
     "dev": "nodemon --config nodemon.json",
     "debug": "nodemon --config nodemon.debug.json",
@@ -25,7 +23,7 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "fix:eslint": "eslint --fix  --no-error-on-unmatched-pattern --ext js,jsx,ts,tsx {src,__tests__}/**",
     "fix:prettier": "prettier --write '{src,__tests__}/**/*.ts'",
-    "fix": "yarn fix:eslint && yarn fix:prettier"
-  },
-  "gitHead": "34ceb9d932faf7b8d91a29b153af80982672a28b"
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "prepublish": "yarn test && yarn build"
+  }
 }
