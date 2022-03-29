@@ -1,10 +1,1 @@
-{
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "paths": {}
-  },
-  "include": [
-    "./src/**/*"
-  ]
-}
+/Users/kristi.jorgji/Desktop/libs/winstonjs-utils/_common/tsconfig.json

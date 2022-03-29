@@ -11,9 +11,6 @@
   "description": "Html format for WinstonJS logger",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "./dist"
-  ],
   "scripts": {
     "dev": "nodemon --config nodemon.json",
     "debug": "nodemon --config nodemon.debug.json",
