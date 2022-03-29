@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-beta.4](https://github.com/kristijorgji/winstonjs-utils/compare/@kristijorgji/winstonjs-fingers-crossed-transport@1.1.0-beta.3...@kristijorgji/winstonjs-fingers-crossed-transport@1.1.0-beta.4) (2022-03-29)
+
+
+### Bug Fixes
+
+* **winstonjs-fingers-crossed-transport, winstonjs-html-format, winstonjs-mail-transport:** use .npmignore isntead of files ([812bfaa](https://github.com/kristijorgji/winstonjs-utils/commit/812bfaac2b8e23eb4e1e66450f11323e02fd1566))
+
+
+### Reverts
+
+* Revert "fix(winstonjs-fingers-crossed-transport, winstonjs-html-format, winstonjs-mail-transport): change package.json to force include ts declaration file" ([481bb14](https://github.com/kristijorgji/winstonjs-utils/commit/481bb14400d64271ebc3cd68e440d5c2d1e6f8d2))
+
+
+
+
+
 # [1.1.0-beta.3](https://github.com/kristijorgji/winstonjs-utils/compare/@kristijorgji/winstonjs-fingers-crossed-transport@1.1.0-beta.2...@kristijorgji/winstonjs-fingers-crossed-transport@1.1.0-beta.3) (2022-03-29)
 
 
