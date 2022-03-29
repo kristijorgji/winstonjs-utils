@@ -1,0 +1,9 @@
+__tests__
+coverage
+src
+tasks
+.eslintrc.js
+jest.config.js
+nodemon.debug.json
+nodemon.json
+tsconfig.json
