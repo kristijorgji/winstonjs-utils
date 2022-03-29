@@ -25,6 +25,5 @@
     "fix:prettier": "prettier --write '{src,__tests__}/**/*.ts'",
     "fix": "yarn fix:eslint && yarn fix:prettier",
     "prepublish": "yarn test && yarn build"
-  },
-  "gitHead": "34ceb9d932faf7b8d91a29b153af80982672a28b"
+  }
 }
