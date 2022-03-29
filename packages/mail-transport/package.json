@@ -13,7 +13,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "./dist",
-    "./index.d.ts"
+    "./dist/index.d.ts"
   ],
   "scripts": {
     "dev": "nodemon --config nodemon.json",
